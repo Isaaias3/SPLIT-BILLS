@@ -13,26 +13,32 @@
     <link rel="stylesheet" href="style.css" />
     <title>Split Bills</title>
   </head>
-  <body style="background-color: #8F9FD">
+  <body style="background-color: #E8F9FD">
     <div
       class="container d-flex align-items-center justify-content-center vh-100"
     >
-      <div class="row rounded-4 mx-1" style="background-color: #D3DEDC;">
-        <div class="col rounded-top text-center" style="background-color: #92A9BD;">
+      <div class="row rounded-4 mx-1 shadow-lg mb-5" style="background-color: #d3dedc">
+        <div
+          class="col rounded-top text-center"
+          style="background-color: #92a9bd"
+        >
           <h1 class="p-5">App de Gastos</h1>
         </div>
         <div class="row">
           <div class="col">
             <div
-              class="form-floating mx-2 my-3 text-center border border-dark border-top-0 border-end-0 border-start-0" style="border-color: black;"
-              id="formulario">
+              class="form-floating mx-2 my-3 text-center border border-dark border-top-0 border-end-0 border-start-0"
+              style="border-color: black"
+              id="formulario"
+            >
               <div class="input-group my-3">
                 <span class="input-group-text" id="spanNombre">Nombre</span>
                 <input
                   type="text"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)"
-                  id="nombre"/>
+                  id="nombre"
+                />
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="spanDollar">$</span>
@@ -40,21 +46,23 @@
                   type="number"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)"
-                  id="dollar"/>
+                  id="dollar"
+                />
               </div>
               <input
                 class="btn m-2 mb-4"
-                style="background-color:#92A9BD;"
+                style="background-color: #92a9bd"
                 type="submit"
                 value="Enviar"
-                onclick="sumbit()"/>
+                onclick="sumbit()"
+              />
             </div>
             <div class="resultados" id="containerList">
-                <div>
-                    <ul class="list-group list-group-flush" id="listResult"></ul>
-                </div>
-                <div class="m-3 text-st" id= "comment">
-                </div>
+              <div>
+                <ul class="list-group list-group-flush" id="listResult"></ul>
+              </div>
+              <div class="m-3 text-st" id="comment"></div>
+            </div>
           </div>
         </div>
       </div>
