@@ -12,7 +12,6 @@ function tomoValores(){
     let names = document.getElementById("nombre").value
     let value = document.getElementById("dollar").value
     arr.push([names, parseFloat(value)])
-    console.log(typeof(names))
 }
 function printList() {
     let newList = document.createElement("li")
