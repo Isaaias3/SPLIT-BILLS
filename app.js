@@ -5,29 +5,28 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 const arr = [];
 const List = document.getElementById("listResult")
-const Result = document.getElementById("comments")
+const Result = document.getElementById("comments")    
+const nam = document.getElementById("nombre")
+const mon = document.getElementById("dollar")
 let newComment = document.createElement("p")
 
 function tomoValores(){
-    let names = document.getElementById("nombre").value
-    let value = document.getElementById("dollar").value
-    arr.push([names, parseFloat(value)])
+    arr.push([nam.value, parseFloat(mon.value)])
 }
-function printList() {
+function muestroUltimo() {
     let newList = document.createElement("li")
-    for (i of arr) {
-        newList.innerHTML = '<li class="list-group-item" style="background-color: #D3DEDC">' + i[0] + ': $' + i[1] + '</li>' 
-        List.appendChild(newList)
-    }
+    newList.innerHTML = `<li class="list-group-item" style="background-color: #D3DEDC"> ${arr[arr.length - 1][0]} : $${arr[arr.length - 1][1]}</li>` 
+    List.appendChild(newList)
 }
+
 function printComment() {
-    newComment.innerHTML = '<p style="background-color: #D3DEDC; padding-left:16px;">Total: $' + suma + '<br> A cada uno le toca: $' + Valores +'</p>'
+    newComment.innerHTML = `<p style="background-color: #D3DEDC; padding-left:16px;">Total: $ ${suma} <br> A cada uno le toca: $${Valores}</p>`
     List.appendChild(newComment)
 }
 function splitBills(Montos) {
     suma = 0;
         for (let Valor of Montos){
-            suma = suma + Valor[1]  ;
+            suma += Valor[1]         ;
         }
         Valores = suma / (arr.length);
         return Valores, suma
@@ -40,6 +39,6 @@ function splitBills2(Montos) {
 function sumbit() {
     tomoValores()
     splitBills(arr)
-    printList()
+    muestroUltimo()
     printComment()
 }
